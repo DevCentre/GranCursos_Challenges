@@ -72,9 +72,21 @@
         }
       },
       deleteContact: function(index) {
-        if (confirm("Are you sure you want to delete this contact?")) {
-          this.contacts.splice(index, 1);
-        }
+        Swal.fire({
+          title: 'Deseja remover este contato?',
+          showDenyButton: true,
+          showCancelButton: false,
+          confirmButtonText: `Sim`,
+          denyButtonText: `Não`,
+        }).then((result) => {
+          /* Read more about isConfirmed, isDenied below */
+          if (result.isConfirmed) {
+            this.contacts.splice(index, 1);
+            Swal.fire('Excluido!', '', 'success')
+          } else if (result.isDenied) {
+            Swal.fire('Nenhuma mudança realizada', '', 'info')
+          }
+        })
       }
     }
   };
