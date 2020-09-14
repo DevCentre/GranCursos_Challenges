@@ -23,7 +23,7 @@
                 v-model="contact.cellphone"
               >
             </div>
-            <button class="btn btn-primary" v-on:click="addContact">Submit</button>
+            <button class="btn btn-primary" v-on:click="addContact">Adicionar</button>
           </div>
         </div>
       </div>
