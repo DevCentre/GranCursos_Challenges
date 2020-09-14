@@ -1,10 +1,11 @@
 <template>
   <div class="container" id="app">
     <div class="row">
+      <h2 class='text-center'>Contatos Gran Cursos Online</h2><br>
       <div class="col-sm-6">
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h3>Add a contact</h3>
+            <h3>Novo Contato</h3>
           </div>
           <div class="panel-body">
             <div class="form-group">
@@ -23,21 +24,23 @@
       <div class="col-sm-6">
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h3>Address book</h3>
+            <h3>Lista de Contatos</h3>
           </div>
-          <table id="phoneBookItems" class="informationTable">
+          <table id="phoneBookItems" class="informationTable table table-strip">
             <thead>
-              <th>Nome</th>
-              <th>Sobrenome</th>
-              <th>Telefone</th>
-              <th></th>
+              <tr>
+                <th>Nome</th>
+                <th>Sobrenome</th>
+                <th>Telefone</th>
+                <th>Remover</th>
+              </tr>
             </thead>
             <tbody>
               <tr v-for="(contact, index) in contacts">
                 <td>{{ contact.given_names }}</td>
                 <td>{{ contact.surname }}</td>
                 <td>{{ contact.cellphone }}</td>
-                <td><button class="btn btn-xs btn-danger" v-on:click="deleteContact(index)">Delete</button></td>
+                <td><button class="btn btn-xs btn-danger" v-on:click="deleteContact(index)">Deletar</button></td>
               </tr>
             </tbody>
           </table>
@@ -46,8 +49,9 @@
     </div>
   </div>
 </template>
-<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+
 <script>
+
   export default {
     name: "app",
     data() {
