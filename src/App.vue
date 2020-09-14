@@ -10,16 +10,16 @@
           </div>
           <div class="panel-body">
             <div class="form-group">
-              <input class="form-control" placeholder="Given names" v-model="contact.given_names">
+              <input class="form-control" placeholder="Nome" v-model="contact.given_names">
             </div>
             <div class="form-group">
-              <input class="form-control" placeholder="Surname" v-model="contact.surname">
+              <input class="form-control" placeholder="Sobrenome" v-model="contact.surname">
             </div>
             <div class="form-group">
               <input
                 type="number"
                 class="form-control"
-                placeholder="Cellphone"
+                placeholder="Telefone"
                 v-model="contact.cellphone"
               >
             </div>
